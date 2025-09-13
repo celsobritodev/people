@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "0321b2de-834d-4bb0-a259-6c86a8163f9d",
+		"name": "People",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "22901965"
+	},
+	"item": [
+		{
+			"name": "findById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{localhost}}/people/1"
+			},
+			"response": []
+		},
+		{
+			"name": "findAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{localhost}}/people"
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"Sandra\",\r\n\"cpf\" : \"29389832\",\r\n\"age\":51\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{localhost}}/people"
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"Celso\",\r\n\"cpf\" : \"092844528303\",\r\n\"age\":58\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{localhost}}/people/1"
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\": \"Victor\",\r\n\"cpf:\" : \"1232233223\",\r\n\"age\":21\r\n\r\n}"
+				},
+				"url": "{{localhost}}/people/1"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
