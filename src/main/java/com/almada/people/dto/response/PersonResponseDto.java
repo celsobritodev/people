@@ -1,0 +1,29 @@
+package com.almada.people.dto.response;
+
+import com.almada.people.entity.Person;
+
+import lombok.Getter;
+
+@Getter // adiciona os getters automaticamente
+public class PersonResponseDto {
+
+	private Long id;
+
+
+	private String name;
+
+
+	private String cpf;
+
+
+	private Integer age;
+	
+	public PersonResponseDto(Person person) {
+		this.id = person.getId();
+		this.name = person.getName();
+		this.cpf = person.getCpf();
+		this.age = person.getAge();
+		
+	}
+
+}
