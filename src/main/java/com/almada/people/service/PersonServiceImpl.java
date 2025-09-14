@@ -1,6 +1,7 @@
 package com.almada.people.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
@@ -60,8 +61,18 @@ public class PersonServiceImpl implements PersonService {
 
 	@Override
 	public String delete(Long id) {
-		personRepository.deleteById(id); // Deleta a pessoa pelo ID	
-		return "Person id: " + id + " foi deletado"; // Retorna uma mensagem de confirmação
+		
+	    Optional<Person> optionalPerson= personRepository.findById(id);
+     	if (optionalPerson.isPresent()) {
+
+    		personRepository.deleteById(id); // Deleta a pessoa pelo ID	
+    		return "Person id: " + id + " foi deletado"; // Retorna uma mensagem de confirmação
+    		
+     	} else {
+     		return "Não encontrado";
+     	}
+		
+		
 	}
 	
 	
